@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x, y) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -8,7 +8,8 @@ var Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    //this.speed = speed;
+    this.speed = speed;
+    this.speed = Math.random() * 100;
 };
 
 // Update the enemy's position, required method for game
@@ -42,7 +43,9 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function() {
-
+    if(player.handleInput(allowedKeys[e.keyCode]) = 38){
+        player.y += 100;
+    }
 };
 
 
@@ -50,7 +53,7 @@ Player.prototype.handleInput = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var enemy1 = new Enemy(0, 228);
+var enemy1 = new Enemy(100, 228);
 var enemy2 = new Enemy(0, 145);
 var enemy3 = new Enemy(0, 60);
 var player = new Player(200, 405);
